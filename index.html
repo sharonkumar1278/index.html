@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seminar Hall Booking - RMK ENGINEERING COLLEGE</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+}
+
+/* ---------------- HERO SECTION ---------------- */
+.hero {
+    height: 65vh;
+    background: linear-gradient(to bottom, rgba(8,32,72,0.9), rgba(8,32,72,0.9)),
+                url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero p {
+    margin-top: 8px;
+}
+
+/* ---------------- SECTION TITLE ---------------- */
+.section-title {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.section-title h2 {
+    font-size: 28px;
+    color: #0d2a52;
+}
+
+/* ---------------- SEMINAR HALL CARDS ---------------- */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.card {
+    width: 330px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 18px;
+}
+
+.card h3 {
+    color: #0d2a52;
+    font-size: 20px;
+}
+
+.price {
+    margin-top: 5px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #0d2a52;
+}
+
+.card button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    background: #0d2a52;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ---------------- MODAL FORM ---------------- */
+.modal-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    background: white;
+    width: 420px;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.modal-box input,
+.modal-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cancel-btn {
+    background: #ccc;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    background: #0d2a52;
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* ---------------- GET IN TOUCH SECTION ---------------- */
+.contact-section {
+    margin-top: 60px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #0d2a52;
+}
+
+.contact-sub {
+    margin-top: 8px;
+    color: #555;
+}
+
+.contact-boxes {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.contact-box {
+    width: 300px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-box h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #0d2a52;
+}
+
+/* ---------------- FOOTER ---------------- */
+.footer {
+    margin-top: 50px;
+    background: #0d2a52;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Seminar Hall Booking</h1>
+    <p>Book professional seminar halls equipped with modern facilities</p>
+</div>
+
+<!-- TITLE -->
+<div class="section-title">
+    <h2>Available Seminar Halls</h2>
+    <p>RMK ENGINEERING COLLEGE</p>
+</div>
+
+<!-- SEMINAR HALL CARDS -->
+<div class="card-container">
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+            <h3>RJ BLOCK Seminar Hall</h3>
+            <p>Capacity: 150 People</p>
+            <div class="price">₹2,000/day</div>
+            <button onclick="openForm('RJ BLOCK Seminar Hall', '2000')">Book Now</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1503428593586-e225b39bddfe?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+            <h3>NEW BLOCK Seminar Hall</h3>
+            <p>Capacity: 100 People</p>
+            <div class="price">₹1,000/day</div>
+            <button onclick="openForm('NEW BLOCK Seminar Hall', '1000')">Book Now</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+            <h3>S AND H Seminar Hall</h3>
+            <p>Capacity: 80 People</p>
+            <div class="price">₹500/day</div>
+            <button onclick="openForm('S AND H Seminar Hall', '500')">Book Now</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- GET IN TOUCH SECTION -->
+<div class="contact-section">
+    <div class="contact-title">Get In Touch</div>
+    <div class="contact-sub">Have questions? Our team is here to help you plan the perfect event.</div>
+
+    <div class="contact-boxes">
+
+        <div class="contact-box">
+            <img src="https://img.icons8.com/fluency-systems-filled/100/0d2a52/phone.png" width="55">
+            <h3>Phone</h3>
+            <p>Customer Service</p>
+            <strong>+1 (555) 123-4567</strong>
+        </div>
+
+        <div class="contact-box">
+            <img src="https://img.icons8.com/ios-filled/100/0d2a52/marker.png" width="55">
+            <h3>Location</h3>
+            <p>Visit Us</p>
+            <strong>RMK ENGINEERING COLLEGE</strong><br>
+            Chennai, Tamil Nadu (India)
+        </div>
+
+        <div class="contact-box">
+            <img src="https://img.icons8.com/ios-filled/100/0d2a52/clock.png" width="55">
+            <h3>Hours</h3>
+            <p>Office Hours</p>
+            <strong>Mon–Fri 9AM–6PM</strong><br>
+            Sat–Sun 10AM–4PM
+        </div>
+
+    </div>
+</div>
+
+<!-- MODAL FORM -->
+<div class="modal-bg" id="modal">
+    <div class="modal-box">
+        <h2 id="hallName">Book Seminar Hall</h2>
+
+        <input type="text" placeholder="Full Name *">
+        <input type="email" placeholder="Email *">
+        <input type="text" placeholder="Phone Number *">
+        <input type="text" placeholder="Organization">
+        <input type="date">
+        <textarea rows="4" placeholder="Purpose of Booking"></textarea>
+
+        <div class="modal-buttons">
+            <button class="cancel-btn" onclick="closeForm()">Cancel</button>
+            <button class="submit-btn">Submit Booking</button>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    Professional Seminar Hall Booking System – RMK ENGINEERING COLLEGE
+</div>
+
+<script>
+function openForm(hall, price) {
+    document.getElementById('hallName').innerHTML =
+        `Book ${hall} (₹${price}/day)`;
+    document.getElementById('modal').style.display = "flex";
+}
+
+function closeForm() {
+    document.getElementById('modal').style.display = "none";
+}
+</script>
+
+</body>
+</html>
